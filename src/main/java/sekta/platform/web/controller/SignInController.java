@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import sekta.platform.core.entity.User;
 import sekta.platform.core.service.UserService;
 
@@ -20,7 +19,7 @@ public class SignInController {
     private UserService us;
 
     @RequestMapping(value="")
-    public String showAll(@ModelAttribute("user") User userWantLogin,HttpServletRequest request) throws FileNotFoundException {//цей метод в мене для входу
+    public String showAll(@ModelAttribute("user") User userWantLogin) throws FileNotFoundException {//цей метод в мене для входу
         List<User> users=us.getAllUsers();//цим рядком ми отримуємо користувачів
 
         for(User user:users){
@@ -35,7 +34,6 @@ public class SignInController {
 
     @RequestMapping(value="login-true")//даний метод я не використовував  method = RequestMethod.POST
     public String showAll(ModelMap model){
-        System.out.println("kek");
         //model.addAttribute("login");
 
         return "login/login-true";
