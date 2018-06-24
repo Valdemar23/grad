@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import sekta.platform.core.entity.User;
 import sekta.platform.core.service.UserService;
 
-import javax.servlet.http.HttpServletRequest;
-import java.io.FileNotFoundException;
 import java.util.List;
 
 @Controller
@@ -19,7 +17,7 @@ public class SignInController {
     private UserService us;
 
     @RequestMapping(value="")
-    public String showAll(@ModelAttribute("user") User userWantLogin) throws FileNotFoundException {//цей метод в мене для входу
+    public String showAll(@ModelAttribute("user") User userWantLogin){//цей метод в мене для входу
         List<User> users=us.getAllUsers();//цим рядком ми отримуємо користувачів
 
         for(User user:users){
