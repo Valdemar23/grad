@@ -20,7 +20,6 @@ public class SignInController {
         List<User> users=us.getAllUsers();//цим рядком ми отримуємо користувачів
 
         for(User user:users){
-            System.out.println(user.getUserName());
             if(user.getUserName().equals(userWantLogin.getUserName()) && user.getPassword().equals(userWantLogin.getPassword())){
                 if(user.isFlag())return "main";
                 return "login/login-user";
