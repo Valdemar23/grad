@@ -8,7 +8,7 @@
 <body>
 <div class="container">
     <h1>Login</h1>
-    <form role="form">
+    <form role="form" method="post">
         <div class="form-group">
             <label for="userName" class="col-sm-2 control-label">Login</label>
             <div class="col-sm-10">

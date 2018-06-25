@@ -2,7 +2,6 @@ package sekta.platform.web.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import sekta.platform.core.entity.User;
@@ -24,18 +23,18 @@ public class SignInController {
             System.out.println(user.getUserName());
             if(user.getUserName().equals(userWantLogin.getUserName()) && user.getPassword().equals(userWantLogin.getPassword())){
                 if(user.isFlag())return "main";
-                return "login/login-true";
+                return "login/login-user";
             }
         }
         return "login/login";
     }
 
-    @RequestMapping(value="login-true")//даний метод я не використовував  method = RequestMethod.POST
+    /*@RequestMapping(value="login-true")//даний метод я не використовував  method = RequestMethod.POST
     public String showAll(ModelMap model){
         //model.addAttribute("login");
 
         return "login/login-true";
-    }
+    }*/
 
 
     /*@RequestMapping(value="/login", method = RequestMethod.GET)//даний метод я не використовував
