@@ -23,18 +23,18 @@
 
 <form action="/users/edit" method="post" class="col-xs-offset-4 col-xs-4">
     <div class="form-group">
-        <label for="user-name">Username</label>
-        <input type="text" class="form-control" name="userName" value="${user.userName}" id="user-name">
+        <label for="user-treaty">Username</label>
+        <input type="text" class="form-control" treaty="userName" value="${user.userName}" id="user-treaty">
     </div>
     <div class="form-group">
         <label for="email">E-mail</label>
-        <input type="email" class="form-control" name="email" value="${user.email}" id="email">
+        <input type="email" class="form-control" treaty="email" value="${user.email}" id="email">
     </div>
     <div class="form-group">
         <label for="flag">Root right</label>
-        <input type="flag" class="form-control" name="flag" value="${user.flag}" id="flag">
+        <input type="flag" class="form-control" treaty="flag" value="${user.flag}" id="flag">
     </div>
-    <input type="hidden" class="form-control" name="userId" value="${user.userId}">
+    <input type="hidden" class="form-control" treaty="userId" value="${user.userId}">
     <button type="submit" class="btn btn-primary col-xs-12">Edit</button>
 </form>
 </body>

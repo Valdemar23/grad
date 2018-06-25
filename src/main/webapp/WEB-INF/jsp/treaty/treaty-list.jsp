@@ -25,7 +25,7 @@
 
 <!-- Trigger the modal with a button -->
 <div class="create-button">
-<button type="button" class="btn btn-primary col-xs-2" data-toggle="modal" data-target="#addGradeModal">Add grade</button>
+<button type="button" class="btn btn-primary col-xs-2" data-toggle="modal" data-target="#addGradeModal">Add treaty</button>
 </div>
 <p class="text-center text-success col-offset-xs-12 bg-success flash-message">${message}</p>
 <!-- addGradeModal -->
@@ -36,13 +36,13 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h1>Add grade</h1>
+                <h1>Add treaty</h1>
             </div>
             <div class="modal-body">
-                <form action="/grades/create" method="post" class="">
+                <form action="/treaty/create" method="post" class="">
                     <div class="form-group">
-                        <label for="user-name">Username</label>
-                        <select class="form-control" name="userId" id="user-name" required>
+                        <label for="user-treaty">Username</label>
+                        <select class="form-control" treaty="userId" id="user-treaty" required>
                             <option selected disabled></option>
                             <c:forEach var="user" items="${users}">
                             <option value="${user.userId}">${user.userName}</option>
@@ -50,16 +50,16 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="grade">Grade</label>
-                        <input type="number" class="form-control" name="grade" value="${grade.grade}" id="grade" min="0" max="100" required>
+                        <label for="treaty">Treaty</label>
+                        <input type="text" class="form-control" treaty="treaty" value="${treaty.treaty}" id="treaty" required>
                     </div>
 
-                    <div class="form-group">
+                    <!--<div class="form-group">
                         <label for="comment">Comment</label>
-                        <input type="text" class="form-control" name="comment" value="${grade.comment}" id="comment" >
-                    </div>
+                        <input type="text" class="form-control" treaty="comment" value="${grade.comment}" id="comment" >
+                    </div>-->
                     <div class="form-group">
-                        <input type="hidden" class="form-control" name="userId" value="${user.userId}">
+                        <input type="hidden" class="form-control" treaty="userId" value="${user.userId}">
                     </div>
                     <button type="submit" class="btn btn-primary col-xs-12">Add</button>
                 </form>
@@ -73,23 +73,21 @@
 <table class="table table-striped text-center all-items">
     <tr>
         <th class="col-xs-2 text-center">Username:</th>
-        <th class="col-xs-1 text-center">Grade:</th>
-        <th class="col-xs-4 text-center">Comments:</th>
+        <th class="col-xs-1 text-center">Treaty:</th>
         <th class="col-xs-2 text-center">Date:</th>
         <th class="col-xs-1 text-center">Edit</th>
         <th class="col-xs-1 text-center">Delete</th>
     </tr>
 
-    <c:forEach items="${grades}" var="grade">
+    <c:forEach items="${treaty}" var="treaty">
     <tr>
-        <td>${grade.user.userName}</td>
-        <td>${grade.grade}</td>
-        <td>${grade.comment}</td>
-        <td>${grade.date}</td>
-        <td><a href="/grades/edit/${grade.id}"><i class="glyphicon glyphicon-pencil" style="color: #d9b144;"></i></a></td>
+        <td>${treaty.user.userName}</td>
+        <td>${treaty.treaty}</td>
+        <td>${treaty.date}</td>
+        <td><a href="/treaty/edit/${treaty.id}"><i class="glyphicon glyphicon-pencil" style="color: #d9b144;"></i></a></td>
         <td>
-            <form action="/grades/delete" method="post">
-                <input type="hidden" name="id" value="${grade.id}">
+            <form action="/treaty/delete" method="post">
+                <input type="hidden" treaty="id" value="${treaty.id}">
             <button type="submit" style="height: 0; border: 0; padding: 0;"><i class="glyphicon glyphicon-remove" style="color: #d90000;"></i></button>
             </form>
         </td>

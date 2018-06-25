@@ -41,21 +41,21 @@
             <div class="modal-body">
                 <form action="/users/create" method="post" class="">
                     <div class="form-group">
-                        <label for="user-name">Username</label>
-                        <input type="text" class="form-control" name="userName" id="user-name" placeholder="Peter">
+                        <label for="user-treaty">Username</label>
+                        <input type="text" class="form-control" treaty="userName" id="user-treaty" placeholder="Peter">
                     </div>
                     <div class="form-group">
                         <label for="email">E-mail</label>
-                        <input type="email" class="form-control" name="email" id="email"
+                        <input type="email" class="form-control" treaty="email" id="email"
                                placeholder="peter.ivanov@gmail.com">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="text" class="form-control" name="password" id="password" placeholder="Ivanov">
+                        <input type="text" class="form-control" treaty="password" id="password" placeholder="Ivanov">
                     </div>
                     <div class="form-group">
                         <label for="flag">Admin right</label>
-                        <input type="text" class="form-control" name="flag" id="flag" placeholder="0">
+                        <input type="text" class="form-control" treaty="flag" id="flag" placeholder="0">
                     </div>
                     <button type="submit" class="btn btn-primary col-xs-12">Add</button>
                 </form>

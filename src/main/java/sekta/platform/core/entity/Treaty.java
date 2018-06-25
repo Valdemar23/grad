@@ -9,7 +9,7 @@ public class Treaty {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String treaty;
 
     private LocalDate date;
 
@@ -27,12 +27,12 @@ public class Treaty {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTreaty() {
+        return treaty;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTreaty(String treaty) {
+        this.treaty = treaty;
     }
 
     public LocalDate getDate() {

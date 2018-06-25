@@ -11,26 +11,26 @@
             integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="/static/grade-list.css">
-    <h1 align="center">Edit grade</h1>
+    <h1 align="center">Edit treaty</h1>
 </head>
 <body class="container">
 
-<form action="/grades/edit" method="post" class="col-xs-offset-4 col-xs-4">
+<form action="/treaty/edit" method="post" class="col-xs-offset-4 col-xs-4">
     <div class="form-group">
-        <label>User: ${grade.user.userName}</label>
+        <label>User: ${treaty.user.userName}</label>
     </div>
 
     <div class="form-group">
-        <label for="grade">Grade</label>
-        <input type="number" class="form-control" name="grade" value="${grade.grade}" id="grade"  min="0" max="100" required>
+        <label for="treaty">Treaty</label>
+        <input type="text" class="form-control" treaty="treaty" value="${treaty.treaty}" id="treaty" required>
     </div>
 
-    <div class="form-group">
+    <!--<div class="form-group">
         <label for="comment">Comment</label>
-        <input type="text" class="form-control" name="comment" value="${grade.comment}" id="comment">
-    </div>
+        <input type="text" class="form-control" treaty="comment" value="${grade.comment}" id="comment">
+    </div>-->
     <div class="form-group">
-        <input type="hidden" class="form-control" name="id" value="${grade.id}">
+        <input type="hidden" class="form-control" treaty="id" value="${treaty.id}">
     </div>
 
     <button type="submit" class="btn btn-primary col-xs-12">Edit</button>

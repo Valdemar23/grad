@@ -41,8 +41,8 @@
             <div class="modal-body">
                 <form action="/grades/create" method="post" class="">
                     <div class="form-group">
-                        <label for="user-name">Username</label>
-                        <select class="form-control" name="userId" id="user-name" required>
+                        <label for="user-treaty">Username</label>
+                        <select class="form-control" treaty="userId" id="user-treaty" required>
                             <option selected disabled></option>
                             <c:forEach var="user" items="${users}">
                             <option value="${user.userId}">${user.userName}</option>
@@ -51,15 +51,15 @@
                     </div>
                     <div class="form-group">
                         <label for="grade">Grade</label>
-                        <input type="number" class="form-control" name="grade" value="${grade.grade}" id="grade" min="0" max="100" required>
+                        <input type="number" class="form-control" treaty="grade" value="${grade.grade}" id="grade" min="0" max="100" required>
                     </div>
 
                     <div class="form-group">
                         <label for="comment">Comment</label>
-                        <input type="text" class="form-control" name="comment" value="${grade.comment}" id="comment" >
+                        <input type="text" class="form-control" treaty="comment" value="${grade.comment}" id="comment" >
                     </div>
                     <div class="form-group">
-                        <input type="hidden" class="form-control" name="userId" value="${user.userId}">
+                        <input type="hidden" class="form-control" treaty="userId" value="${user.userId}">
                     </div>
                     <button type="submit" class="btn btn-primary col-xs-12">Add</button>
                 </form>
@@ -89,7 +89,7 @@
         <td><a href="/grades/edit/${grade.id}"><i class="glyphicon glyphicon-pencil" style="color: #d9b144;"></i></a></td>
         <td>
             <form action="/grades/delete" method="post">
-                <input type="hidden" name="id" value="${grade.id}">
+                <input type="hidden" treaty="id" value="${grade.id}">
             <button type="submit" style="height: 0; border: 0; padding: 0;"><i class="glyphicon glyphicon-remove" style="color: #d90000;"></i></button>
             </form>
         </td>
