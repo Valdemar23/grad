@@ -28,6 +28,9 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Message> messages = new ArrayList<Message>();
 
+    @OneToMany(mappedBy = "user")
+    private List<Treaty> Treaty = new ArrayList<Treaty>();
+
     public User() {}
 
     public Long getUserId() {
@@ -84,5 +87,13 @@ public class User {
 
     public void setMessages(List<Message> messages) {
         this.messages = messages;
+    }
+
+    public List<Treaty> getTreaty() {
+        return Treaty;
+    }
+
+    public void setTreaty(List<Treaty> treaty) {
+        Treaty = treaty;
     }
 }
